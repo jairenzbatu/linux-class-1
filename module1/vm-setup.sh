@@ -53,5 +53,5 @@ if [[ ${test} == "Y" ]]; then
 	echo -e ${summary}
 	echo -e "\n\n Please Copy and Paste the code below to Canvas.\n"
 	echo ${summary} | base64 -w 0
-	echo ""
+	echo -e "\n"
 fi
