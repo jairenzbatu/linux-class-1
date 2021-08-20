@@ -23,7 +23,7 @@ if [[ ${octet_detect} == ${octet_input} ]]; then
 	echo "#           IP Is Within Range              #"
 	echo "#                                           #"
 	echo "#############################################"
-
+	network="pass"
 else
 	clear
 	echo "#############################################"
@@ -34,5 +34,24 @@ else
 	echo ""
 	echo -e "Your IP is: ${RED} ${ip_detect} ${NC}"
 	echo -e "While Host IP is:${RED} ${vm_input} ${NC}"
+	echo ""
+	network="fail"
+fi
+
+#specs
+hdd=$(df -h / | tail -1 | awk '{print $2}')
+memory=$(free -m | grep "Mem:" | awk '{print $2}')
+version=$(cat /etc/centos-release)
+mac=$(find /sys/class/net -mindepth 1 -maxdepth 1 ! -name lo -printf "%P: " -execdir cat {}/address \;)
+
+echo "Enter 'Y' to Grade your Assignment..."
+read test
+
+if [[ ${test} == "Y" ]]; then
+	clear
+	summary="System Specs \n >> Network: ${network} - ${ip_detect} \n >> Disk Space: ${hdd} \n >> Memory: ${memory} \n >> Linux Version: ${version} \n >> MAC: ${mac}"
+	echo -e ${summary}
+	echo -e "\n\n Please Copy and Paste the code below to Canvas.\n"
+	echo ${summary} | base64 -w 0
 	echo ""
 fi
