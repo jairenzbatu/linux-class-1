@@ -1,0 +1,6 @@
+encrypt
+$ echo "stockexchange.com" | openssl rsautl -encrypt -inkey rsa_key.pub -pubin -out secret.dat
+
+decrypt
+$ string=`openssl rsautl -decrypt -inkey rsa_key.pri -in secret.dat `; echo $string
+stockexchange.com
