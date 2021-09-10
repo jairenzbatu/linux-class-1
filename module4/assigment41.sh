@@ -2,7 +2,7 @@
 
 function gradenow {
 	clear
-	echo "Ensure to run the script with sudo under your own account. Press enter to continue."
+	echo "Ensure to run the script under your own account. Press enter to continue."
 	read test
 
 	clear
