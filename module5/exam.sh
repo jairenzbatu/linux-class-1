@@ -71,7 +71,7 @@ function checker {
 	f_students=$(ls -l /opt/linux_academy/students/)
 
 	# group creations
-	data_groups=$(tail -10 /etc/group)
+	data_groups=$(tail -15 /etc/group)
 
 	# user creations
 	data_users=$(tail -15 /etc/passwd)
