@@ -115,13 +115,13 @@ function checker {
 
 	clear
 	echo -e "\n\nPlease Copy and Paste the code below to MyClass.\n"
+	echo "------------- START OF CODE -------------"
 	echo "${tag_value}-_-${enc}"
+	echo "-------------  END OF CODE  -------------"
 	echo -e "\n \n \n"
 
 	#tag VM as scored
-	echo "------------- START OF CODE -------------"
 	echo "${std_name}_${activity}" >> ~/.${activity}
-	echo "-------------  END OF CODE  -------------"
 
 }
 
