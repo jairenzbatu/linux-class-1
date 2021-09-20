@@ -119,7 +119,10 @@ function checker {
 	echo -e "\n \n \n"
 
 	#tag VM as scored
+	echo "------------- START OF CODE -------------"
 	echo "${std_name}_${activity}" >> ~/.${activity}
+	echo "-------------  END OF CODE  -------------"
+
 }
 
 current_user=$(whoami)
